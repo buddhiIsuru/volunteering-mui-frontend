@@ -21,24 +21,25 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import Divider from "@mui/material/Divider";
 import DirectionsIcon from "@mui/icons-material/Directions";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 
-const OpportunityCard = () => {
+const OpportunityCard = (props) => {
   return (
-    <Card >
+    <Card sx={{ border: '1px solid #143109' }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Word of the Day
+          {props.cardData.category}
         </Typography>
         <Typography variant="h5" component="div">
-          be nev o lent
+          {props.cardData.title}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
+          {props.cardData.location}
         </Typography>
         <Typography variant="body2">
-          well meaning and kindly.
+          {props.cardData.skillLevel}
           <br />
-          {'"a benevolent smile"'}
         </Typography>
       </CardContent>
       <CardActions>
@@ -49,6 +50,219 @@ const OpportunityCard = () => {
 };
 
 const VolunteerPage = () => {
+  const campaigns = [
+    {
+      id: 1,
+      title: "Campaign 1",
+      category: "Humanitarian",
+      location: "New York",
+      skillLevel: "Beginner",
+    },
+    {
+      id: 2,
+      title: "Campaign 2",
+      category: "Environment",
+      location: "Los Angeles",
+      skillLevel: "Intermediate",
+    },
+    {
+      id: 3,
+      title: "Campaign 3",
+      category: "Animals",
+      location: "Colombo",
+      skillLevel: "Advanced",
+    },
+    {
+      id: 4,
+      title: "Campaign 4",
+      category: "Humanitarian",
+      location: "Los Angeles",
+      skillLevel: "Beginner",
+    },
+    {
+      id: 5,
+      title: "Campaign 5",
+      category: "Environment",
+      location: "Colombo",
+      skillLevel: "Intermediate",
+    },
+    {
+      id: 6,
+      title: "Campaign 6",
+      category: "Animals",
+      location: "New York",
+      skillLevel: "Advanced",
+    },
+    {
+      id: 7,
+      title: "Campaign 7",
+      category: "Humanitarian",
+      location: "Colombo",
+      skillLevel: "Beginner",
+    },
+    {
+      id: 8,
+      title: "Campaign 8",
+      category: "Environment",
+      location: "Los Angeles",
+      skillLevel: "Intermediate",
+    },
+    {
+      id: 9,
+      title: "Campaign 9",
+      category: "Animals",
+      location: "New York",
+      skillLevel: "Advanced",
+    },
+    {
+      id: 10,
+      title: "Campaign 10",
+      category: "Humanitarian",
+      location: "Colombo",
+      skillLevel: "Beginner",
+    },
+    // Add more campaign data with locations as Colombo, New York, or Los Angeles
+    {
+      id: 11,
+      title: "Campaign 11",
+      category: "Environment",
+      location: "Colombo",
+      skillLevel: "Intermediate",
+    },
+    {
+      id: 12,
+      title: "Campaign 12",
+      category: "Animals",
+      location: "New York",
+      skillLevel: "Advanced",
+    },
+    {
+      id: 13,
+      title: "Campaign 13",
+      category: "Humanitarian",
+      location: "Los Angeles",
+      skillLevel: "Beginner",
+    },
+    {
+      id: 14,
+      title: "Campaign 14",
+      category: "Environment",
+      location: "Colombo",
+      skillLevel: "Intermediate",
+    },
+    {
+      id: 15,
+      title: "Campaign 15",
+      category: "Animals",
+      location: "New York",
+      skillLevel: "Advanced",
+    },
+    {
+      id: 16,
+      title: "Campaign 16",
+      category: "Humanitarian",
+      location: "Colombo",
+      skillLevel: "Beginner",
+    },
+    {
+      id: 17,
+      title: "Campaign 17",
+      category: "Environment",
+      location: "Los Angeles",
+      skillLevel: "Intermediate",
+    },
+    {
+      id: 18,
+      title: "Campaign 18",
+      category: "Animals",
+      location: "New York",
+      skillLevel: "Advanced",
+    },
+    {
+      id: 19,
+      title: "Campaign 19",
+      category: "Humanitarian",
+      location: "Colombo",
+      skillLevel: "Beginner",
+    },
+    {
+      id: 20,
+      title: "Campaign 20",
+      category: "Environment",
+      location: "Los Angeles",
+      skillLevel: "Intermediate",
+    },
+    {
+      id: 21,
+      title: "Campaign 21",
+      category: "Animals",
+      location: "New York",
+      skillLevel: "Advanced",
+    },
+    {
+      id: 22,
+      title: "Campaign 22",
+      category: "Humanitarian",
+      location: "Colombo",
+      skillLevel: "Beginner",
+    },
+    {
+      id: 23,
+      title: "Campaign 23",
+      category: "Environment",
+      location: "Los Angeles",
+      skillLevel: "Intermediate",
+    },
+    {
+      id: 24,
+      title: "Campaign 24",
+      category: "Animals",
+      location: "New York",
+      skillLevel: "Advanced",
+    },
+    {
+      id: 25,
+      title: "Campaign 25",
+      category: "Humanitarian",
+      location: "Colombo",
+      skillLevel: "Beginner",
+    },
+    {
+      id: 26,
+      title: "Campaign 26",
+      category: "Environment",
+      location: "Los Angeles",
+      skillLevel: "Intermediate",
+    },
+    {
+      id: 27,
+      title: "Campaign 27",
+      category: "Animals",
+      location: "New York",
+      skillLevel: "Advanced",
+    },
+    {
+      id: 28,
+      title: "Campaign 28",
+      category: "Humanitarian",
+      location: "Colombo",
+      skillLevel: "Beginner",
+    },
+    {
+      id: 29,
+      title: "Campaign 29",
+      category: "Environment",
+      location: "Los Angeles",
+      skillLevel: "Intermediate",
+    },
+    {
+      id: 30,
+      title: "Campaign 30",
+      category: "Animals",
+      location: "New York",
+      skillLevel: "Advanced",
+    },
+  ];
   return (
     <div>
       <Grid
@@ -213,7 +427,20 @@ const VolunteerPage = () => {
           </Grid>
         </Grid>
 
-        <Grid item xs={12} sm={12} md={10} component={Paper} sx={{ p: 4,mt:1 }}>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={10}
+          component={Paper}
+          sx={{ p: 4, mt: 1 }}
+        >
+          <Stack spacing={2}>
+            <Grid container justifyContent="center">
+              <Pagination count={10} variant="outlined" color="primary" />
+            </Grid>
+          </Stack>
+
           <Grid xs={12} md={12}>
             <Box
               component="form"
@@ -222,38 +449,12 @@ const VolunteerPage = () => {
               sx={{ mt: 3 }}
             >
               <Grid container spacing={2}>
-                <Grid item xs={12} sm={6} md={3} >
-                  {" "}
-                  <OpportunityCard />{" "}
-                </Grid>
-                <Grid item xs={12} sm={6} md={3} >
-                  {" "}
-                  <OpportunityCard />{" "}
-                </Grid>
-                <Grid item xs={12} sm={6} md={3}>
-                  {" "}
-                  <OpportunityCard />{" "}
-                </Grid>
-                <Grid item xs={12} sm={6} md={3}>
-                  {" "}
-                  <OpportunityCard />{" "}
-                </Grid>
-                <Grid item xs={12} sm={6} md={3} >
-                  {" "}
-                  <OpportunityCard />{" "}
-                </Grid>
-                <Grid item xs={12} sm={6} md={3} >
-                  {" "}
-                  <OpportunityCard />{" "}
-                </Grid>
-                <Grid item xs={12} sm={6} md={3}>
-                  {" "}
-                  <OpportunityCard />{" "}
-                </Grid>
-                <Grid item xs={12} sm={6} md={3}>
-                  {" "}
-                  <OpportunityCard />{" "}
-                </Grid>
+                {campaigns.map((Obj) => (
+                  <Grid item xs={12} sm={6} md={3}>
+                    {" "}
+                    <OpportunityCard cardData={Obj} />{" "}
+                  </Grid>
+                ))}
               </Grid>
             </Box>
           </Grid>
