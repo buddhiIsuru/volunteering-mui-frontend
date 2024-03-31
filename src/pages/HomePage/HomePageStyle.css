@@ -1,0 +1,14 @@
+.banner-section {
+  position: "relative";
+  min-height: "100vh";
+  width: "100%";
+  background-size: "cover";
+  display: "flex";
+  align-items: "center";
+  justify-content: "center";
+  background-image: url("./../../assets/wallpaperflare.com_wallpaper.jpg");
+  color: "#ffffff";
+  background-color: "rgba(181, 191, 161, 0.9)";
+  background-position: "center";
+  text-align: "center";
+}
